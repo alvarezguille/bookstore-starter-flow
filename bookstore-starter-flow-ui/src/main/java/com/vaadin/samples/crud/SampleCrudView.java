@@ -50,6 +50,10 @@ public class SampleCrudView extends HorizontalLayout
 
         form = new ProductForm(viewLogic);
         form.setCategories(DataService.get().getAllCategories());
+        // add animated class name
+        form.addClassNames("animated");
+        // add class name for desired animations, full list in https://github.com/daneden/animate.css/#animations
+        form.addClassNames("slideInRight");
 
         VerticalLayout barAndGridLayout = new VerticalLayout();
         barAndGridLayout.add(topLayout);

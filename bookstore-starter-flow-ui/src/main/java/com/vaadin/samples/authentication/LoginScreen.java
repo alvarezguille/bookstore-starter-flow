@@ -20,6 +20,7 @@ import com.vaadin.samples.MainLayout;
 @Route("Login")
 @PageTitle("Login")
 @CssImport("./styles/shared-styles.css")
+@CssImport("./styles/animate.css")
 public class LoginScreen extends FlexLayout {
 
     private AccessControl accessControl;

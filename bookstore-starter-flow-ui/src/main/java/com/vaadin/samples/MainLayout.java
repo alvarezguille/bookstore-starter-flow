@@ -23,6 +23,7 @@ import com.vaadin.samples.crud.SampleCrudView;
 @Theme(value = Lumo.class)
 @PWA(name = "Bookstore Starter", shortName = "Bookstore")
 @CssImport("./styles/shared-styles.css")
+@CssImport("./styles/animate.css")
 public class MainLayout extends FlexLayout implements RouterLayout {
     private Menu menu;
 

@@ -8,6 +8,7 @@ import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.dom.ClassList;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteConfiguration;
@@ -39,6 +40,11 @@ public class LoginScreen extends FlexLayout {
         loginForm.addLoginListener(this::login);
         loginForm.addForgotPasswordListener(
                 event -> Notification.show("Hint: same as username"));
+        ClassList loginFormClassList = loginForm.getElement().getClassList();
+        // add animated class name
+        loginFormClassList.add("animated");
+        // add class name for desired animations, full list in https://github.com/daneden/animate.css/#animations
+        loginFormClassList.add("fadeIn");
 
         // layout to center login form when there is sufficient screen space
         FlexLayout centeringLayout = new FlexLayout();
@@ -49,6 +55,11 @@ public class LoginScreen extends FlexLayout {
 
         // information text about logging in
         Component loginInformation = buildLoginInformation();
+        ClassList loginInformationClassList = loginInformation.getElement().getClassList();
+        // add animated class name
+        loginInformationClassList.add("animated");
+        // add class name for desired animations, full list in https://github.com/daneden/animate.css/#animations
+        loginInformationClassList.add("slideInLeft");
 
         add(loginInformation);
         add(centeringLayout);
